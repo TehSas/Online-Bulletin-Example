@@ -2,8 +2,8 @@
     "main_bulletin": [
         {
             "bull_type": "screen_link",
-            "img": "https://tehsas.github.io/OBB/example_0.jpg",
-            "img2": "https://tehsas.github.io/OBB/example_0.jpg",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_0.jpg",
+            "img2": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_0.jpg",
             "title": "Place Holder Title #1",
             "text": "Hello World! This is placeholder text #1.",
             "active": "True",
@@ -11,14 +11,14 @@
         },
         {
             "bull_type": "web_link",
-            "img": "https://tehsas.github.io/OBB/example_1.jpg",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_1.jpg",
             "active": "True",
             "link": "https://www.patreon.com/Sauce_is_Here"
         },
         {
             "bull_type": "screen_link",
-            "img": "https://tehsas.github.io/OBB/example_2.jpg",
-            "img2": "https://tehsas.github.io/OBB/example_2.jpg",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_2.jpg",
+            "img2": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_2.jpg",
             "title": "Place Holder Title #2",
             "text": "Hello World! This is placeholder text #2.",
             "active": "True",
@@ -26,7 +26,7 @@
         },
         {
             "bull_type": "web_link",
-            "img": "https://tehsas.github.io/OBB/example_3.jpg",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_3.jpg",
             "active": "True",
             "link": "https://the-real-sauce.itch.io/2d-side-scrolling-in-renpy"
         }
