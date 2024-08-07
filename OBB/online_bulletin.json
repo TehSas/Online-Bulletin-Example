@@ -1,3 +1,28 @@
 {
-    "id": 1
+    "main_bulletin": [
+        {
+            "bull_type": "screen_link",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/example.jpg",
+            "active": "True",
+            "link": ""
+        },
+        {
+            "bull_type": "web_link",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/example.jpg",
+            "active": "True",
+            "link": "https://www.patreon.com/Sauce_is_Here"
+        },
+        {
+            "bull_type": "screen_link",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/example.jpg",
+            "active": "True",
+            "link": ""
+        },
+        {
+            "bull_type": "web_link",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/example.jpg",
+            "active": "True",
+            "link": "https://the-real-sauce.itch.io/2d-side-scrolling-in-renpy"
+        },
+    ]
 }
