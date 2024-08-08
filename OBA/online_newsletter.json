@@ -1,0 +1,83 @@
+{
+    "id": 2,
+    "title": "NORMALCY",
+    "imgs": [
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/normalcy1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/openworld1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/map1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/economy1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/store1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/inventory1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/ui1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/race1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/fishing1a.png"
+        },
+        {
+            "nl_img": "https://thesauce00.github.io/normalcy_bulletin/combat1a.png"
+        }
+    ],
+    "texts": [
+        {
+            "nl_text": "Welcome to the open-world life sim RPG where everything is just... normal. In this delightfully mundane game, you’ll experience the thrills of everyday life: you know, buy groceries, go to work, fight for survival. . . usual stuff."
+        }
+    ],
+    "bulls": [
+        {
+            "title": "- Just a Normal Story -",
+            "texts": [
+                {
+                    "nl_text": "Just a normal story . . . that's it really, the usual picking up some groceries for a friend to getting involved in a corporate conspiracy involving the use of ai to expand control of a corporation trying to take over the world one person at a time. . . Yep, normal."
+                }
+            ]
+        },
+        {
+            "title": "- Ever Changing World -",
+            "texts": [
+                {
+                    "nl_text": "Try to survive in an constatntly changing world. Where the prices on products are always moving, character schedules will be effected by story events and enemies variety expands more and more as time progresses. What you say and do will affect social dynamics, which can lead to friend perks or even dating perks."
+                }
+            ]
+        },
+        {
+            "title": "- A Weird Life Sim RPG -",
+            "texts": [
+                {
+                    "nl_text": "In Normalcy, leveling up isn’t just about grinding through dungeons or saving princesses. Here, your character grows and evolves through a variety of odd activities that blend the mundane with the bizarre. "
+                },
+                {
+                    "nl_text": "Get ready to enhance your stats by engaging in some truly unconventional methods like, reading, going to the bathroom, cooking, watching tv, taking a walk, staring out the window. If all those sound boring you can always resort to beating the crap out of criminals"
+                }
+            ]
+        },
+        {
+            "title": "- Other Things -",
+            "texts": [
+                {
+                    "nl_text": "UI that changes with the seasons, weather and area, In phone apps, like a custom music app, where you can add audio files and play your favorite music while walking around the world, and so much more being added."
+                }
+            ]
+        }
+    ],
+    "dsc": [
+        {
+            "dsc_text": "* This game is a work in progress, screenshots are from an older version of the game, Since the release of the 2D Side Scroller, which is being implemented in the game. Art, some ui (I like what I got now), and openworld elements are subject to change. However, the premise and gameplay features will be maintained. *"
+        }
+    ]
+}

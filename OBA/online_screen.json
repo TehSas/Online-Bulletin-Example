@@ -1,0 +1,12 @@
+{
+    "id": 0,
+    "text": [
+        {
+            "text": "Welcome to my {b}FIRST RELEASE{/b}! . . . sort of, Uhh I have multiple projects in the works. I'll have updates on these online bulletins, which are found in any of my projects. Also I'm kicking off my Patreon (see the patreon tab on the bulletin for a link and info), where updates from my projects and Renpy tricks & assets will be posted for patrons."
+        },
+        {
+            "text": "This month I'm planning to posting the files for the basic version of the online bulletin board on {a=https://www.patreon.com/Sauce_is_Here}patreon{/a} for {b}I Want It All{/b} tier patrons, a more complex version (the one I'm using) of it will be released on itch.io."
+        }
+    ],
+    "img2": "https://thesauce00.github.io/main_bulletin/1_2.jpg"
+}
