@@ -29,6 +29,21 @@
             "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_3.jpg",
             "active": "True",
             "link": "https://the-real-sauce.itch.io/2d-side-scrolling-in-renpy"
+        },
+        {
+            "bull_type": "screen_link",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_4.jpg",
+            "img2": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_4.jpg",
+            "title": "Thinking time",
+            "text": "Hmmm im thinking . . . ",
+            "active": "True",
+            "link": ""
+        },
+        {
+            "bull_type": "web_link",
+            "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_5.jpg",
+            "active": "True",
+            "link": "https://the-real-sauce.itch.io/2d-side-scrolling-in-renpy"
         }
     ]
 }
