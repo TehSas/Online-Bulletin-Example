@@ -2,13 +2,11 @@
     "id": 5,
     "listing": [
         {
-            "icon": "https://thesauce00.github.io/icon/2Dsidescroller.png",
+            "icon": "https://tehsas.github.io/Online-Bulletin-Example/OBA/icon_1.png",
             "title": "2D Side Scroller Template",
-            "type": "Renpy Asset",
-            "price": "$40",
-            "discount": "False",
-            "new_price": "$0",
-            "color": "#FFAA00",
+            "desc": "Renpy Asset",
+            "color": "#00FF49",
+            "button": "LINK",
             "link": "https://the-real-sauce.itch.io/2d-side-scrolling-in-renpy"
         }
     ]

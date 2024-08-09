@@ -1,6 +1,6 @@
 {
     "id": 2,
-    "title": "NORMALCY",
+    "title": "NEWS!!!",
     "imgs": [
         {
             "nl_img": "https://thesauce00.github.io/normalcy_bulletin/normalcy1a.png"
@@ -33,7 +33,7 @@
             "nl_img": "https://thesauce00.github.io/normalcy_bulletin/combat1a.png"
         }
     ],
-    "texts": [
+    "desc": [
         {
             "nl_text": "Welcome to the open-world life sim RPG where everything is just... normal. In this delightfully mundane game, you’ll experience the thrills of everyday life: you know, buy groceries, go to work, fight for survival. . . usual stuff."
         }
@@ -73,11 +73,6 @@
                     "nl_text": "UI that changes with the seasons, weather and area, In phone apps, like a custom music app, where you can add audio files and play your favorite music while walking around the world, and so much more being added."
                 }
             ]
-        }
-    ],
-    "dsc": [
-        {
-            "dsc_text": "* This game is a work in progress, screenshots are from an older version of the game, Since the release of the 2D Side Scroller, which is being implemented in the game. Art, some ui (I like what I got now), and openworld elements are subject to change. However, the premise and gameplay features will be maintained. *"
         }
     ]
 }
