@@ -35,6 +35,6 @@
         "https://tehsas.github.io/Online-Bulletin-Example/OBA/online_newsletter.json",
         "https://tehsas.github.io/Online-Bulletin-Example/OBA/online_list.json"
     ],
-    "maintenance": "True",
+    "maintenance": "False",
     "bullet_file": "https://tehsas.github.io/Online-Bulletin-Example/OBA/online_bulletin.rpy"
 }
