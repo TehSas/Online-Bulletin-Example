@@ -8,6 +8,7 @@
             "link": ""
         },
         {
+            "id": 1,
             "bull_type": "web_link",
             "img": "https://tehsas.github.io/Online-Bulletin-Example/OBB/example_1.jpg",
             "active": "True",
