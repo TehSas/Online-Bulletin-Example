@@ -149,7 +149,7 @@ screen show_newsletter:
                             vbox:
                                 spacing 25
                                 text i['title'] color "#FFFFFF" size 30 bold True xsize 600
-                                for ii in i["desc"]:
+                                for ii in i["texts"]:
                                     text ii['nl_text'] color "#FFFFFF" size 20 bold False xsize 600
                                 text "" color "#FFFFFF" size 20 text_align 0.5 bold True
 
