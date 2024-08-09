@@ -97,7 +97,7 @@ screen show_newsletter:
     default load_screen_bullet = True
     add "#000000" alpha 0.9
     #text str(len(loaded_img_cache))
-    if selected_bullet2["title"] == '' or len(selected_bullet2["imgs"]) == 0 or len(selected_bullet2["texts"]) == 0 or len(selected_bullet2["bulls"]) == 0 or len(selected_bullet2["dsc"]) == 0:
+    if selected_bullet2["title"] == '' or len(selected_bullet2["imgs"]) == 0 or len(selected_bullet2["desc"]) == 0 or len(selected_bullet2["bulls"]) == 0:
         add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
         if load_screen_bullet == True:
             add Text("LOADING BULLETIN", size=25, color="#FFFFFF", bold=True, outlines = [ (absolute(8), "#000", absolute(2.5), absolute(2.5)) ]) xalign 0.5 yalign 0.5 yoffset 150
