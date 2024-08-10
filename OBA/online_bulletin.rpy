@@ -80,7 +80,7 @@ screen show_bulletin:
                 text "   " size 10
 
                 viewport at loading_trans_:
-                    xysize (2000, 360)
+                    xysize (1500, 360)
                     mousewheel True
                     xalign 0.5 yalign 0.0
                     xoffset 235
