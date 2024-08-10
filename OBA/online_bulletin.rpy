@@ -63,29 +63,35 @@ screen show_bulletin:
             xalign 0.5
             yalign 0.5
             background None
-
+            add Transform(Solid("#FFFFFF", xysize=(2000, 750),xalign=0.5),alpha=0.05) xalign 0.5 yalign 0.5
             add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
             vbox:
                 xalign 0.5
-                yalign 0.5
-                spacing 40
-                text selected_bullet2['title'] size 50 color "#FFFFFF" bold True text_align 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ]
+                yalign 0.0
+                yoffset 170
+                spacing 5
+                text selected_bullet2['title'] size 50 color "#FFFFFF" bold True text_align 0.5 xalign 0.5 yalign 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ]
 
                 imagebutton:
-                    xalign 0.5
+                    xalign 0.5 yalign 0.5
                     idle fetch_image(selected_bullet2['img2'])
                     action NullAction()
 
+                text "   " size 10
+
                 viewport at loading_trans_:
-                    xysize (2000, 750)
+                    xysize (2000, 360)
                     mousewheel True
+                    xalign 0.5 yalign 0.0
+                    xoffset 235
                     vbox:
+                        xalign 0.5 yalign 0.5
                         for i in selected_bullet2["text"]:
-                            text i['text'] color "#FFFFFF" xsize 1500 text_align 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ]
+                            text i['text'] color "#FFFFFF" xsize 1500 text_align 0.5 xalign 0.5 yalign 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ]
 
         imagebutton:
-            idle Text("{color=#808080}CLOSE", size = 75, bold=True)
-            hover Text("{color=#FFFFFF}CLOSE", size = 75, bold=True)
+            idle Text("{color=#808080}CLOSE", size = 75, bold=True, outlines = [ (absolute(8), "#000", absolute(2), absolute(2)) ])
+            hover Text("{color=#FFFFFF}CLOSE", size = 75, bold=True, outlines = [ (absolute(8), "#000", absolute(2), absolute(2)) ])
             xalign 0.5
             yalign 1.0
             yoffset -50
@@ -426,4 +432,5 @@ screen bulletin_board:
 label quit:
     $ persistent.news = None
     $ persistent.current_news = None
+    $ delete_file()
     $ cleanup_temp_files()
