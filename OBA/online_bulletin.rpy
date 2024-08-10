@@ -84,7 +84,6 @@ screen show_bulletin:
                     xysize (1500, 360)
                     mousewheel True
                     xalign 0.5 yalign 0.0
-                    #xoffset 235
                     vbox:
                         xalign 0.5 yalign 0.5
                         for i in selected_bullet2["text"]:

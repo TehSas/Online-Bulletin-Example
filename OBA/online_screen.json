@@ -3,10 +3,10 @@
     "title": "Uhhh Hello!??",
     "text": [
         {
-            "text": "Welcome to my {b}FIRST RELEASE{/b}! . . . sort of, Uhh I have multiple projects in the works. I'll have updates on these online bulletins, which are found in any of my projects. Also I'm kicking off my Patreon (see the patreon tab on the bulletin for a link and info), where updates from my projects and Renpy tricks & assets will be posted for patrons."
+            "text": "This is a test bulletin . . . as an example of what you can do."
         },
         {
-            "text": "This month I'm planning to posting the files for the online bulletin board on {a=https://www.patreon.com/Sauce_is_Here}patreon{/a} for {b}I Want It All{/b} tier patrons, a more complex version (the one I'm using) of it will be released on itch.io."
+            "text": "You can add multiple lines to it aswell."
         }
     ],
     "img2": "https://tehsas.github.io/Online-Bulletin-Example/OBA/example_5.jpg"
