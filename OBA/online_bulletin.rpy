@@ -63,6 +63,7 @@ screen show_bulletin:
             xalign 0.5
             yalign 0.5
             background None
+            xysize (1920,1080)
             add Transform(Solid("#FFFFFF", xysize=(2000, 750),xalign=0.5),alpha=0.05) xalign 0.5 yalign 0.5
             add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
             vbox:
@@ -83,7 +84,7 @@ screen show_bulletin:
                     xysize (1500, 360)
                     mousewheel True
                     xalign 0.5 yalign 0.0
-                    xoffset 235
+                    #xoffset 235
                     vbox:
                         xalign 0.5 yalign 0.5
                         for i in selected_bullet2["text"]:
