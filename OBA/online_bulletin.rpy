@@ -293,7 +293,6 @@ screen show_list:
                                     hbox:
                                         vbox:
                                             yoffset -5
-                                            text i['type'] size 25 color "#8C8C8C"
                                             text i['desc'] size 25 color "#8C8C8C"
                                 if i['button'] == '':
                                     pass
