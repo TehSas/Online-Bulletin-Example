@@ -63,7 +63,6 @@ screen show_bulletin:
             xalign 0.5
             yalign 0.5
             background None
-            xysize (1920,1080)
             add Transform(Solid("#FFFFFF", xysize=(2000, 750),xalign=0.5),alpha=0.05) xalign 0.5 yalign 0.5
             add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
             vbox:
@@ -71,7 +70,7 @@ screen show_bulletin:
                 yalign 0.0
                 yoffset 170
                 spacing 5
-                text selected_bullet2['title'] size 50 color "#FFFFFF" bold True text_align 0.5 xalign 0.5 yalign 0.5
+                text selected_bullet2['title'] size 50 color "#FFFFFF" bold True text_align 0.5 xalign 0.5 yalign 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ]
 
                 imagebutton:
                     xalign 0.5 yalign 0.5
@@ -79,15 +78,15 @@ screen show_bulletin:
                     action NullAction()
 
                 text "   " size 10
-
                 viewport at loading_trans_:
                     xysize (1500, 360)
                     mousewheel True
                     xalign 0.5 yalign 0.0
                     vbox:
+                        xsize 1500
                         xalign 0.5 yalign 0.5
                         for i in selected_bullet2["text"]:
-                            text i['text'] color "#FFFFFF" xsize 1500 text_align 0.5 xalign 0.5 yalign 0.5
+                            text i['text'] color "#FFFFFF" xsize 1500 text_align 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ] xalign 0.5 yalign 0.5
 
         imagebutton:
             idle Text("{color=#808080}CLOSE", size = 75, bold=True)
