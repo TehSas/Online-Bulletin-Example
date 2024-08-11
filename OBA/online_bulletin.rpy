@@ -163,10 +163,11 @@ screen show_newsletter:
                                 text "" color "#FFFFFF" size 20 text_align 0.5 bold True
 
 
-                vbox:
+                frame:
                     xalign 0.0
                     yalign 0.5
-                    spacing 40
+                    background None
+                    #spacing 40
                     #text selected_bullet['title'] color "#FFFFFF" xsize 1500 text_align 0.5 bold True
                     for i in selected_bullet2["imgs"]:
                         if i == selected_nl:
@@ -174,32 +175,33 @@ screen show_newsletter:
                             imagebutton:
                                 xalign 0.0
                                 yalign 0.5
+                                yoffset -50
                                 idle Transform(fetch_image(i['nl_img']),zoom=0.5)#NewsImage
                                 action NullAction()
                             #text i['text_bottom'] color "#FFFFFF" xsize 1500 text_align 0.5
 
                     hbox:
-                        xalign 0.0
+                        xalign 0.5
                         yalign 0.5
-                        xoffset 10
-                        yoffset -65
+                        xoffset -345
+                        yoffset 300
                         spacing 10
                         if selected_bullet2["imgs"].index(selected_nl) == 0:
-                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
+                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
                         else:
-                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" ysize 75 yoffset 55
+                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
 
 
                         for i in selected_bullet2["imgs"]:
                             if selected_nl == i:
-                                textbutton _(".") action [NullAction(),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#FFFFFF" text_hover_color "#FFFFFF" ysize 75
+                                textbutton _(".") action [NullAction(),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#FFFFFF" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75
                             else:
-                                textbutton _(".") action [SetVariable("selected_nl",i),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75
+                                textbutton _(".") action [SetVariable("selected_nl",i),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75
 
                         if selected_bullet2["imgs"].index(selected_nl) == len(selected_bullet2["imgs"])-1:
-                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][0]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
+                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][0]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
                         else:
-                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)+1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
+                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)+1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
 
             imagebutton:
                 idle Text("{color=#808080}CLOSE", size = 50, bold=True)
