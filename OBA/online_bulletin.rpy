@@ -288,8 +288,13 @@ screen show_list:
                             hbox:
                                 add Transform(fetch_image(i['icon']),zoom=0.5)
                                 vbox:
-                                    text i['title'] color "#FFFFFF" size 45 yoffset -5
-                                    text i['desc'] size 25 color "#8C8C8C" yoffset 25
+                                    yoffset -5
+                                    text i['title'] color "#FFFFFF" size 45 outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ]
+                                    hbox:
+                                        vbox:
+                                            yoffset -5
+                                            text i['type'] size 25 color "#8C8C8C"
+                                            text i['desc'] size 25 color "#8C8C8C"
                                 if i['button'] == '':
                                     pass
                                 else:
