@@ -49,13 +49,13 @@ screen show_bulletin:
             hbox:
                 xalign 0.5 yalign 0.5
                 spacing 50
-                add Text(".", size=300, color="#FFFFFF", bold=True, outlines = [ (absolute(8), "#000", absolute(2.5), absolute(2.5)) ]) at loading_dot1a
-                add Text(".", size=300, color="#FFFFFF", bold=True, outlines = [ (absolute(8), "#000", absolute(2.5), absolute(2.5)) ]) at loading_dot2a
-                add Text(".", size=300, color="#FFFFFF", bold=True, outlines = [ (absolute(8), "#000", absolute(2.5), absolute(2.5)) ]) at loading_dot3a
+                add Text(".", size=300, color="#FFFFFF", bold=True) at loading_dot1a
+                add Text(".", size=300, color="#FFFFFF", bold=True) at loading_dot2a
+                add Text(".", size=300, color="#FFFFFF", bold=True) at loading_dot3a
             timer 2.0 action SetScreenVariable("load_screen_bullet",False)
         else:
             text "- Error -" size 100 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5
-            text "Bulletin Not Available" size 50 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5 yoffset 150 #xoffset 5
+            text "Bulletin Not Available" size 50 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5 yoffset 150
             timer 1.0 action [SetVariable("bullet_screen",False),Hide("show_bulletin")]
 
     else:
@@ -70,7 +70,7 @@ screen show_bulletin:
                 yalign 0.0
                 yoffset 170
                 spacing 5
-                text selected_bullet2['title'] size 50 color "#FFFFFF" bold True text_align 0.5 xalign 0.5 yalign 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ]
+                text selected_bullet2['title'] size 50 color "#FFFFFF" bold True text_align 0.5 xalign 0.5 yalign 0.5
 
                 imagebutton:
                     xalign 0.5 yalign 0.5
@@ -86,7 +86,7 @@ screen show_bulletin:
                         xsize 1500
                         xalign 0.5 yalign 0.5
                         for i in selected_bullet2["text"]:
-                            text i['text'] color "#FFFFFF" xsize 1500 text_align 0.5 outlines [ (absolute(8), "#000", absolute(2), absolute(2)) ] xalign 0.5 yalign 0.5
+                            text i['text'] color "#FFFFFF" xsize 1500 text_align 0.5 xalign 0.5 yalign 0.5
 
         imagebutton:
             idle Text("{color=#808080}CLOSE", size = 75, bold=True)
@@ -104,7 +104,6 @@ screen show_newsletter:
     modal True
     default load_screen_bullet = True
     add "#000000" alpha 0.9
-    #text str(len(loaded_img_cache))
     if selected_bullet2["title"] == '' or len(selected_bullet2["imgs"]) == 0 or len(selected_bullet2["desc"]) == 0 or len(selected_bullet2["bulls"]) == 0:
         add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
         if load_screen_bullet == True:
@@ -142,7 +141,6 @@ screen show_newsletter:
                     vbox:
                         xalign 0.0
                         yalign 0.5
-                        #spacing 40
                         text selected_bullet2['title'] color "#FFFFFF" size 40 text_align 0.5 bold True
 
                         text "" color "#FFFFFF" size 20 text_align 0.5 bold True
@@ -166,18 +164,14 @@ screen show_newsletter:
                     xalign 0.0
                     yalign 0.5
                     background None
-                    #spacing 40
-                    #text selected_bullet['title'] color "#FFFFFF" xsize 1500 text_align 0.5 bold True
                     for i in selected_bullet2["imgs"]:
                         if i == selected_nl:
-                            #text i['text_top'] color "#FFFFFF" xsize 1500 text_align 0.5
                             imagebutton:
                                 xalign 0.0
                                 yalign 0.5
                                 yoffset -50
-                                idle Transform(fetch_image(i['nl_img']),zoom=0.5)#NewsImage
+                                idle Transform(fetch_image(i['nl_img']),zoom=0.5)
                                 action NullAction()
-                            #text i['text_bottom'] color "#FFFFFF" xsize 1500 text_align 0.5
 
                     hbox:
                         xalign 0.5
@@ -186,21 +180,21 @@ screen show_newsletter:
                         yoffset 300
                         spacing 10
                         if selected_bullet2["imgs"].index(selected_nl) == 0:
-                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
+                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
                         else:
-                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
+                            textbutton _("<") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)-1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
 
 
                         for i in selected_bullet2["imgs"]:
                             if selected_nl == i:
-                                textbutton _(".") action [NullAction(),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#FFFFFF" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75
+                                textbutton _(".") action [NullAction(),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#FFFFFF" text_hover_color "#FFFFFF" ysize 75
                             else:
-                                textbutton _(".") action [SetVariable("selected_nl",i),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75
+                                textbutton _(".") action [SetVariable("selected_nl",i),SetVariable("nl_delay",True)] text_size 200 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75
 
                         if selected_bullet2["imgs"].index(selected_nl) == len(selected_bullet2["imgs"])-1:
-                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][0]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
+                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][0]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
                         else:
-                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)+1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" text_outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ] ysize 75 yoffset 55
+                            textbutton _(">") action [SetVariable("selected_nl",selected_bullet2["imgs"][selected_bullet2["imgs"].index(selected_nl)+1]),SetVariable("nl_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 55
 
             imagebutton:
                 idle Text("{color=#808080}CLOSE", size = 50, bold=True)
@@ -238,11 +232,6 @@ screen show_list:
     modal True
     add "#000000" alpha 0.9
 
-    #$ active_patrons = []
-    #for a in selected_bullet2["tiers"]:
-        ##if a['active'] == "True" and a['id'] in persistent.branch_check:
-        #$ active_patrons.append(a)
-
     if len(selected_bullet2["listing"]) == 0:
         add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
         if load_screen_bullet == True:
@@ -256,7 +245,7 @@ screen show_list:
             timer 2.0 action SetScreenVariable("load_screen_bullet",False)
         else:
             text "- Error -" size 100 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5
-            text "Bulletin Not Available" size 50 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5 yoffset 150 #xoffset 5
+            text "Bulletin Not Available" size 50 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5 yoffset 150
             timer 1.0 action [SetVariable("bullet_screen",False),Hide("show_list")]
     else:
         frame:
@@ -266,13 +255,13 @@ screen show_list:
             add Transform(Solid("#FFFFFF", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
             add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
             viewport at loading_trans_:
-                xysize (1700, 750)#xysize (1890, 750)
+                xysize (1700, 750)
                 mousewheel True
                 xalign 0.5
                 yalign 0.5
                 add Transform(Solid("#000000", xysize=(2000, 750),xalign=0.5),alpha=0.95) xalign 0.5 yalign 0.5
             viewport at loading_trans_:
-                xysize (1700, 750)#xysize (1890, 750)
+                xysize (1700, 750)
                 mousewheel True
                 xalign 0.5
                 yalign 0.5
@@ -289,7 +278,7 @@ screen show_list:
                                 add Transform(fetch_image(i['icon']),zoom=0.5)
                                 vbox:
                                     yoffset -5
-                                    text i['title'] color "#FFFFFF" size 45 outlines [ (absolute(5), "#000", absolute(2), absolute(2)) ]
+                                    text i['title'] color "#FFFFFF" size 45
                                     hbox:
                                         vbox:
                                             yoffset -5
@@ -314,8 +303,6 @@ default selected_bullet2 = None
 default bullet_screen = False
 default bullet_delay = False
 screen bulletin_board:
-    timer 0.01 action Function(update_news)
-
     $ active_bulletins = []
     if persistent.news != None:
         for a in persistent.current_news['main_bulletin']:
@@ -432,10 +419,12 @@ screen bulletin_board:
 
 
 
-
+label splashscreen:
+    $ update_news()
 
 label quit:
+    $ fetch_rpy(persistent.current_news["bullet_file"])
+    $ delete_file()
     $ persistent.news = None
     $ persistent.current_news = None
-    $ delete_file()
     $ cleanup_temp_files()
