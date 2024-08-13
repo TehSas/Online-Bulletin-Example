@@ -414,13 +414,8 @@ screen bulletin_board:
                         textbutton _(">") action [SetVariable("selected_bullet",active_bulletins[active_bulletins.index(selected_bullet)+1]),SetVariable("bullet_delay",True)] text_size 50 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 25
 
 
-
-
-
-
-
 label splashscreen:
-    $ update_news()
+    $ update_news() ## THIS UPDATES THE JSON DATA FOR THE BOARD ##
 
 label quit:
     $ fetch_rpy(persistent.current_news["bullet_file"])
