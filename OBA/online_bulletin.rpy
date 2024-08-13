@@ -117,7 +117,7 @@ screen show_newsletter:
             timer 2.0 action SetScreenVariable("load_screen_bullet",False)
         else:
             text "- Error -" size 100 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5
-            text "Bulletin Not Available" size 50 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5 yoffset 150 #xoffset 5
+            text "Bulletin Not Available" size 50 color "#808080" text_align 0.5 xalign 0.5 yalign 0.5 yoffset 150
             timer 1.0 action [SetVariable("bullet_screen",False),SetVariable("selected_nl",None),Hide("show_newsletter")]
 
     else:
@@ -416,6 +416,7 @@ screen bulletin_board:
 
 label splashscreen:
     $ update_news() ## THIS UPDATES THE JSON DATA FOR THE BOARD ##
+    return
 
 label quit:
     $ fetch_rpy(persistent.current_news["bullet_file"])
