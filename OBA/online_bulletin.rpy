@@ -37,6 +37,7 @@ transform loading_trans_:
         alpha 1.0
         linear 0.5 alpha 0.0
 
+## BULL TYPE - SCREEN_LINK ## - THE SCREEN THAT SHO WS THE BULLETIN
 screen show_bulletin:
     zorder 100
     modal True
@@ -96,6 +97,7 @@ screen show_bulletin:
             yoffset -50
             action [SetVariable("bullet_screen",False),Hide("show_bulletin")]
 
+## BULL TYPE - NEWSLETTER_LINK ## - A SCREEN THAT GETS MULTIPLE IMAGES AND TEXT TO SHOW AN DESCRIBE SOMETHING
 default selected_nl = None
 default nl_screen = False
 default nl_delay = False
@@ -227,6 +229,7 @@ screen newsletter_image_load:
 
     timer 1.0 action [SetVariable("selected_nl",selected_bullet2["imgs"][0]),Hide("newsletter_image_load")]
 
+## BULL TYPE - LIST_LINK ## - MAKES A VERTICAL LIST OF THINGS WITH TEXT, TEXTBUTTONS, ICONS, ETC
 screen show_list:
     zorder 100
     modal True
@@ -298,11 +301,13 @@ screen show_list:
             yoffset -50
             action [SetVariable("bullet_screen",False),Hide("show_list")]
 
+## BULLETIN BOARD ## - SHOWS THE BULLETIN
 default selected_bullet = None
 default selected_bullet2 = None
 default bullet_screen = False
 default bullet_delay = False
 screen bulletin_board:
+    ## THIS COMPILES ALL THE BULLETINS ##
     $ active_bulletins = []
     if persistent.news != None:
         for a in persistent.current_news['main_bulletin']:
@@ -331,19 +336,21 @@ screen bulletin_board:
                 ysize 5
                 text ""
             if persistent.current_news == None:
-                text "OFFLINE" size 75 color "#808080" bold False xoffset 200 yoffset 40
+                text "OFFLINE" size 75 color "#808080" bold False xoffset 200 yoffset 40 ## DETECTS IF JSON DATA IS THERE OR NOT ##
             else:
                 if persistent.current_news['maintenance'] == 'True' and ob_dev_mode == False:
-                    text "* Maintenance Being Done *" size 50 color "#808080" bold False xoffset 10 yoffset 55
+                    text "* Maintenance Being Done *" size 50 color "#808080" bold False xoffset 10 yoffset 55 ## DETECTS IF THERE ARE ANY BULLETINS OR NOT ## - IF MAINTENANCE VARIABLE IN JSON = TRUE * DEVMODE BYPASSES THIS FOR TESTING PURPOSES MAKE SURE TO KEEP FALSE WHEN RELEASING
                 else:
                     if len(active_bulletins) == 0:
-                        text "* Maintenance Being Done *" size 50 color "#808080" bold False xoffset 10 yoffset 55
+                        text "* Maintenance Being Done *" size 50 color "#808080" bold False xoffset 10 yoffset 55 ## DETECTS IF THERE ARE ANY BULLETINS OR NOT ## - IF 0 THEN MAINTENANCE IS BEING DONE
                     else:
                         timer 0.01 action SetVariable("selected_bullet",active_bulletins[0])
                         if selected_bullet != None:
+                            ## BULLETIN IMAGE ##
                             imagebutton:
                                 idle fetch_image(selected_bullet['img'])
                                 yoffset -5
+                                ## BULLETIN TYPES ##
                                 if selected_bullet['bull_type'] == "screen_link":
                                     action [Function(set_bulletin),SetVariable("bullet_screen",True),Show("show_bulletin")]
                                 elif selected_bullet['bull_type'] == "web_link":
@@ -355,9 +362,11 @@ screen bulletin_board:
                                 else:
                                     action NullAction()
 
+    ## FREEZES BULLETIN WHEN CLICKED ## DO NOT DELETE
     if bullet_delay != False:
         timer 0.25 action SetVariable("bullet_delay",False)
 
+    ## IF JSON DATA = NONE THEN WILL SHOW ONLY ## 1 dot and 2 arrows
     if persistent.current_news == None:
         hbox:
             xalign 0.5
@@ -370,7 +379,8 @@ screen bulletin_board:
 
             textbutton _(">") action NullAction() text_size 50 text_idle_color "#757575" text_hover_color "#757575" ysize 75 yoffset 25
     else:
-        if persistent.current_news['maintenance'] == 'True' or len(active_bulletins) == 0:
+        ## IF BULLETIN = NONE THEN WILL SHOW ONLY ## 1 dot and 2 arrows
+        if persistent.current_news['maintenance'] == 'True' and ob_dev_mode == False or len(active_bulletins) == 0:
             hbox:
                 xalign 0.5
                 xoffset 550
@@ -386,28 +396,31 @@ screen bulletin_board:
                 if bullet_screen == False:
                     if active_bulletins.index(selected_bullet) == len(active_bulletins)-1:
                         if bullet_delay == False:
-                            timer 5.0 repeat True action SetVariable("selected_bullet",active_bulletins[0])
+                            timer 5.0 repeat True action SetVariable("selected_bullet",active_bulletins[0]) ## timer for cycling of bulletins it takes 5.0 seconds to change
                     else:
                         if bullet_delay == False:
-                            timer 5.0 repeat True action SetVariable("selected_bullet",active_bulletins[active_bulletins.index(selected_bullet)+1])
+                            timer 5.0 repeat True action SetVariable("selected_bullet",active_bulletins[active_bulletins.index(selected_bullet)+1]) ## timer for cycling of bulletins it takes 5.0 seconds to change
 
                 hbox:
                     xalign 0.5
                     xoffset 550
                     yoffset 150
                     spacing 25
+                    ## ARROWS FOR MOVING BULLETIN LEFT ##
                     if active_bulletins.index(selected_bullet) == 0:
                         textbutton _("<") action [SetVariable("selected_bullet",active_bulletins[-1]),SetVariable("bullet_delay",True)] text_size 50 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 25
                     else:
                         textbutton _("<") action [SetVariable("selected_bullet",active_bulletins[active_bulletins.index(selected_bullet)-1]),SetVariable("bullet_delay",True)] text_size 50 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 25
 
 
+                    ## BULLETIN DOTS CLICK TO JUMP TO THAT BULLETIN ##
                     for i in active_bulletins:
                         if selected_bullet == i:
                             textbutton _(".") action [NullAction(),SetVariable("bullet_delay",True)] text_size 100 text_idle_color "#FFFFFF" text_hover_color "#FFFFFF" ysize 75
                         else:
                             textbutton _(".") action [SetVariable("selected_bullet",i),SetVariable("bullet_delay",True)] text_size 100 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75
 
+                    ## ARROWS FOR MOVING BULLETIN RIGHT ##
                     if active_bulletins.index(selected_bullet) == len(active_bulletins)-1:
                         textbutton _(">") action [SetVariable("selected_bullet",active_bulletins[0]),SetVariable("bullet_delay",True)] text_size 50 text_idle_color "#757575" text_hover_color "#FFFFFF" ysize 75 yoffset 25
                     else:
